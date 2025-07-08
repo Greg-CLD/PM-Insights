@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Manager Stress Infographic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .footnote-link {
+            text-decoration: none;
+            color: #3B82F6; /* blue-500 */
+            font-weight: 600;
+        }
+        .stat-card {
+            background-color: #F9FAFB; /* gray-50 */
+            border: 1px solid #E5E7EB; /* gray-200 */
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-4 sm:p-8">
+
+    <!-- Infographic Block Starts Here -->
+    <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-6 sm:p-10 border border-gray-200">
+        <div class="text-center mb-10">
+            <h2 class="text-3xl sm:text-4xl font-bold text-gray-800">The Pressure on Project Professionals</h2>
+            <p class="mt-2 text-md sm:text-lg text-gray-600">A data-driven snapshot of the wellbeing crisis in project management.</p>
+        </div>
+
+        <div class="space-y-12">
+
+            <!-- Section 1: The Wellbeing Crisis -->
+            <div>
+                <h3 class="text-2xl font-bold text-center text-red-700 mb-6">The Wellbeing Crisis</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="stat-card text-center">
+                        <p class="text-6xl font-bold text-red-600">50%</p>
+                        <p class="mt-2 font-semibold text-gray-700">of PMs experience burnout, the highest rate of any profession surveyed. <sup class="footnote-link">[1]</sup></p>
+                    </div>
+                    <div class="stat-card text-center">
+                        <p class="text-6xl font-bold text-red-600">72%</p>
+                        <p class="mt-2 font-semibold text-gray-700">report their main project has negatively impacted their mental wellbeing. <sup class="footnote-link">[2, 3]</sup></p>
+                    </div>
+                    <div class="stat-card text-center">
+                        <p class="text-6xl font-bold text-red-600">40%</p>
+                        <p class="mt-2 font-semibold text-gray-700">suffer from prolonged, chronic stress in their roles. <sup class="footnote-link">[1]</sup></p>
+                    </div>
+                    <div class="stat-card text-center">
+                        <p class="text-6xl font-bold text-red-600">85%</p>
+                        <p class="mt-2 font-semibold text-gray-700">of PMs facing organizational hurdles burn out from unrealistic deadlines. <sup class="footnote-link">[5]</sup></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 2: The Ripple Effect -->
+            <div>
+                <h3 class="text-2xl font-bold text-center text-amber-700 mb-6">The Ripple Effect</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="stat-card text-center">
+                        <p class="text-5xl font-bold text-amber-600">37%</p>
+                        <p class="mt-2 font-semibold text-gray-700">of PMs have considered leaving the profession due to pressure. <sup class="footnote-link">[5, 6]</sup></p>
+                    </div>
+                    <div class="stat-card text-center">
+                        <p class="text-5xl font-bold text-amber-600">27%</p>
+                        <p class="mt-2 font-semibold text-gray-700">Manager engagement level, a historic low, down from 30%. <sup class="footnote-link">[4]</sup></p>
+                    </div>
+                    <div class="stat-card text-center">
+                        <p class="text-5xl font-bold text-amber-600">$8.9T</p>
+                        <p class="mt-2 font-semibold text-gray-700">Global economic cost of low employee engagement (9% of GDP). <sup class="footnote-link">[4, 17]</sup></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 3: Anatomy of the Problem -->
+            <div>
+                <h3 class="text-2xl font-bold text-center text-gray-700 mb-6">Anatomy of the Problem: The Key Drivers</h3>
+                <div class="space-y-4">
+                    <div class="stat-card">
+                        <p class="font-semibold text-lg">Workload & Deadlines</p>
+                        <ul class="list-disc list-inside mt-2 text-gray-600 space-y-1">
+                            <li><span class="font-bold">85%</span> of PMs manage multiple projects concurrently. <sup class="footnote-link">[5, 6, 18]</sup></li>
+                            <li><span class="font-bold">54%</span> of all employees cite workload as their top stressor. <sup class="footnote-link">[15]</sup></li>
+                            <li><span class="font-bold">70%</span> more likely to burn out from unreasonable time constraints. <sup class="footnote-link">[20]</sup></li>
+                        </ul>
+                    </div>
+                    <div class="stat-card">
+                        <p class="font-semibold text-lg">The Resource & Leadership Gap</p>
+                         <ul class="list-disc list-inside mt-2 text-gray-600 space-y-1">
+                            <li><span class="font-bold">44%</span> of PMs cite "not enough resources" as a top challenge. <sup class="footnote-link">[5, 6]</sup></li>
+                            <li><span class="font-bold">Perception Gap:</span> 43% of PMs feel teams are understaffed, but only 20% of C-suite executives agree. <sup class="footnote-link">[5]</sup></li>
+                            <li>A manager's behavior drives <span class="font-bold">70%</span> of the variance in team engagement. <sup class="footnote-link">[4]</sup></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 4: The Path to Resilience -->
+            <div>
+                 <h3 class="text-2xl font-bold text-center text-green-700 mb-6">The Path to Resilience: Strong Foundations</h3>
+                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="stat-card">
+                        <p class="font-semibold text-lg text-green-800">The Success Dividend</p>
+                        <ul class="list-disc list-inside mt-2 text-green-700 space-y-1">
+                            <li><span class="font-bold">92%</span> success rate for organizations with mature PM practices. <sup class="footnote-link">[6]</sup></li>
+                            <li>These organizations waste <span class="font-bold">28 times less money</span>. <sup class="footnote-link">[6]</sup></li>
+                        </ul>
+                    </div>
+                    <div class="stat-card">
+                        <p class="font-semibold text-lg text-green-800">The Wellbeing Dividend</p>
+                         <ul class="list-disc list-inside mt-2 text-green-700 space-y-1">
+                            <li>After a successful project, <span class="font-bold">54%</span> of employees experience less stress. <sup class="footnote-link">[5]</sup></li>
+                            <li><span class="font-bold">49%</span> feel more in control at work. <sup class="footnote-link">[5]</sup></li>
+                        </ul>
+                    </div>
+                    <div class="stat-card col-span-1 md:col-span-2">
+                        <p class="font-semibold text-lg text-green-800">The Power of Psychological Safety</p>
+                        <p class="mt-2 text-green-700">Workers in high-safety environments are far less likely to feel stressed (<span class="font-bold">27%</span> vs. <span class="font-bold">61%</span>) or look for a new job (<span class="font-bold">19%</span> vs. <span class="font-bold">41%</span>). <sup class="footnote-link">[58]</sup></p>
+                    </div>
+                 </div>
+            </div>
+            
+            <!-- Section 5: The Future Outlook -->
+            <div>
+                <h3 class="text-2xl font-bold text-center text-sky-700 mb-6">The Future Outlook</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="stat-card text-center">
+                        <p class="text-5xl font-bold text-sky-600">29%</p>
+                        <p class="mt-2 font-semibold text-gray-700">of project professionals feel unready for the adoption of AI tools. <sup class="footnote-link">[62]</sup></p>
+                    </div>
+                    <div class="stat-card text-center">
+                        <p class="text-5xl font-bold text-sky-600">53%</p>
+                        <p class="mt-2 font-semibold text-gray-700">of agile teams report experiencing burnout at some point. <sup class="footnote-link">[63]</sup></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="mt-12 pt-6 border-t border-gray-200">
+            <h4 class="text-sm font-bold text-gray-600 mb-2">Sources:</h4>
+            <ol class="list-decimal list-inside text-xs text-gray-500 space-y-1">
+                <li>New York Post (2024); Association for Project Management (APM) Data</li>
+                <li>APM, "The Mental Health of Project Professionals" (2025)</li>
+                <li>APM, "Conditions for Project Success" (2021)</li>
+                <li>Gallup, "State of the Global Workplace" (2024)</li>
+                <li>The Resourceful Project Manager / Smartsheet, "The State of Project Management" (2023)</li>
+                <li>Project Management Institute (PMI), "Pulse of the Profession" Series</li>
+                <li>APM, "The Golden Thread" Report</li>
+                <li>PMI, "Talent Gap: Ten-Year Employment Trends, Costs, and Global Implications"</li>
+                <li>General Project Management Academic Literature on Stress</li>
+                <li>General Project Management Academic Literature on Ambiguity</li>
+                <li>General Project Management Academic Literature on Conflict</li>
+                <li>Mayo Clinic; Agile Burnout Literature</li>
+                <li>General Workforce Burnout Study (2023)</li>
+                <li>General Workforce Burnout Study (2024)</li>
+                <li>General Workforce Stress Study</li>
+                <li>General Work-Related Stress Study</li>
+                <li>Gallup, "State of the Global Workplace" (2023)</li>
+                <li>Academic Literature on Context Switching & Multitasking</li>
+                <li>Academic Literature on "Always-On" Culture</li>
+                <li>Academic Literature on Unreasonable Time Constraints</li>
+                <li>Academic Literature on Top-Down Deadline Setting</li>
+                <li>Academic Literature on Unsupportive Supervision</li>
+                <li>Academic Literature on "Boundary Spanning" Roles</li>
+                <li>Academic Literature on Functionally Siloed Organizations</li>
+                <li>Academic Literature on Accountability without Authority</li>
+                <li>PMI, Study on Risk vs. Uncertainty</li>
+                <li>Academic Literature on Uncertainty Sources</li>
+                <li>Academic Literature on Uncertainty Sources</li>
+                <li>Academic Literature on Unmanageable Uncertainty</li>
+                <li>Neurological Research on Uncertainty and Stress</li>
+                <li>Cognitive Science Research on Decision Paralysis</li>
+                <li>Psychological Research on Team Collaboration under Uncertainty</li>
+                <li>Psychological Research on "Jumping to Conclusions"</li>
+                <li>Psychological Research on Performance Degradation under Stress</li>
+                <li>PMBOK® Guide & General PM Literature on Core Constraints</li>
+                <li>PMBOK® Guide & General PM Literature on Scope Management</li>
+                <li>PMBOK® Guide & General PM Literature on Success Criteria</li>
+                <li>PMBOK® Guide on Project Initiation</li>
+                <li>Academic Literature on Critical Success Factors (CSFs)</li>
+                <li>Academic Literature on Critical Success Factors (CSFs)</li>
+                <li>Academic Literature on Critical Success Factors (CSFs)</li>
+                <li>Academic Literature on Effective Governance & Top Management Support</li>
+                <li>APM, "Dynamic Conditions for Project Success" (2021)</li>
+                <li>Academic Literature on Stakeholder Engagement</li>
+                <li>Academic Literature on Scope Creep Stress</li>
+                <li>Academic Literature on Change Control Benefits</li>
+                <li>Academic Literature on Team Dynamics & Role Clarity</li>
+                <li>Academic Literature on Bottom-Up Estimating</li>
+                <li>Psychological Research on Agency and Control</li>
+                <li>Academic Literature on Team Conflict & Morale</li>
+                <li>PMI, Report on Low-Maturity Organization Failure Rates</li>
+                <li>Academic Literature on Goal Clarity and Motivation</li>
+                <li>Academic Literature on Goal Clarity and Motivation</li>
+                <li>PMI, Case Studies on Framework Implementation</li>
+                <li>Academic Literature, Case Study on Denver International Airport</li>
+                <li>Academic Literature, Case Study on Project Failure</li>
+                <li>Academic Literature, Case Study on Project Failure</li>
+                <li>American Psychological Association, "Work in America" Survey (2024)</li>
+                <li>Research on Executive vs. Team Perception Gaps</li>
+                <li>Research on Mental Health Resource Effectiveness</li>
+                <li>Research on PPM Tool Benefits</li>
+                <li>PMI, Report on AI in Project Management</li>
+                <li>Research on Agile Team Burnout</li>
+            </ol>
+        </div>
+    </div>
+    <!-- Infographic Block Ends Here -->
+
+</body>
+</html>
