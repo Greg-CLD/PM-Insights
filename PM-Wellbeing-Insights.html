@@ -24,6 +24,9 @@
         border: 1px solid #A9A9A9; /* Grey */
         border-radius: 0.75rem;
         padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
     #pm-infographic-container .source-link {
         color: #16414E; /* Blue */
@@ -69,7 +72,7 @@
         <!-- Section 2: The Knock-on Effects -->
         <div>
             <h3 class="text-2xl font-bold text-center text-[#FEA632] mb-6">The Knock-on Effects</h3>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="stat-card text-center">
                     <p class="text-5xl font-bold text-[#16414E]">37%</p>
                     <p class="mt-2 font-semibold text-[#16414E]">of project managers have thought about leaving the profession due to pressure. <sup class="footnote-link">[3, 4]</sup></p>
@@ -78,7 +81,7 @@
                     <p class="text-5xl font-bold text-[#16414E]">27%</p>
                     <p class="mt-2 font-semibold text-[#16414E]">Manager engagement is at a historic low, down from 30%. <sup class="footnote-link">[5]</sup></p>
                 </div>
-                <div class="stat-card text-center">
+                <div class="stat-card text-center md:col-span-2 lg:col-span-1">
                     <p class="text-5xl font-bold text-[#16414E]">£7.1T</p>
                     <p class="mt-2 font-semibold text-[#16414E]">Global cost of low employee engagement ($8.9T or 9% of GDP). <sup class="footnote-link">[5]</sup></p>
                 </div>
@@ -88,7 +91,7 @@
         <!-- Section 3: Key Causes of Stress -->
         <div>
             <h3 class="text-2xl font-bold text-center text-[#FEA632] mb-6">Key Causes of Stress</h3>
-            <div class="space-y-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="stat-card">
                     <p class="font-semibold text-lg text-[#16414E]">Workload & Deadlines</p>
                     <ul class="list-disc list-inside mt-2 text-[#16414E] space-y-1">
