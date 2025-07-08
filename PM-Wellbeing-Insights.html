@@ -36,6 +36,37 @@
     #pm-infographic-container .source-link:hover {
         color: #FEA632; /* Yellow */
     }
+    /* Custom grid classes for responsiveness in narrow containers */
+    #pm-infographic-container .custom-grid {
+        display: grid;
+        gap: 1.5rem; /* Equivalent to gap-6 */
+        grid-template-columns: 1fr; /* Default to 1 column */
+    }
+    /* Media query for screens wider than 550px */
+    @media (min-width: 550px) {
+        #pm-infographic-container .custom-grid-2-col {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        #pm-infographic-container .custom-grid-3-col {
+            grid-template-columns: repeat(2, 1fr); /* Start with 2 columns */
+        }
+    }
+    /* Media query for even wider screens to accommodate 3 columns */
+    @media (min-width: 820px) {
+        #pm-infographic-container .custom-grid-3-col {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        /* Ensure the third item in a 2-col layout spans the full width if needed */
+        #pm-infographic-container .custom-grid-3-col > *:nth-child(3) {
+           grid-column: span 1; /* Reset for 3-col layout */
+        }
+    }
+     @media (min-width: 550px) and (max-width: 819.98px) {
+        /* On medium screens, make the 3rd item in the 3-col grid span the full width */
+        #pm-infographic-container .custom-grid-3-col > *:nth-child(3) {
+           grid-column: span 2;
+        }
+    }
 </style>
 
 <div id="pm-infographic-container" class="max-w-4xl mx-auto bg-[#fff5e7] rounded-xl shadow-lg p-6 sm:p-10 border border-[#A9A9A9]">
@@ -49,7 +80,7 @@
         <!-- Section 1: The Wellbeing Challenge -->
         <div>
             <h3 class="text-2xl font-bold text-center text-[#FEA632] mb-6">The Wellbeing Challenge</h3>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="custom-grid custom-grid-2-col">
                 <div class="stat-card text-center">
                     <p class="text-5xl sm:text-6xl font-bold text-[#16414E]">50%</p>
                     <p class="mt-2 font-semibold text-[#16414E]">of project managers experience burnout - the highest of any profession surveyed. <sup class="footnote-link">[1]</sup></p>
@@ -72,7 +103,7 @@
         <!-- Section 2: The Knock-on Effects -->
         <div>
             <h3 class="text-2xl font-bold text-center text-[#FEA632] mb-6">The Knock-on Effects</h3>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div class="custom-grid custom-grid-3-col">
                 <div class="stat-card text-center">
                     <p class="text-4xl sm:text-5xl font-bold text-[#16414E]">37%</p>
                     <p class="mt-2 font-semibold text-[#16414E]">of project managers have thought about leaving the profession due to pressure. <sup class="footnote-link">[3, 4]</sup></p>
@@ -81,7 +112,7 @@
                     <p class="text-4xl sm:text-5xl font-bold text-[#16414E]">27%</p>
                     <p class="mt-2 font-semibold text-[#16414E]">Manager engagement is at a historic low, down from 30%. <sup class="footnote-link">[5]</sup></p>
                 </div>
-                <div class="stat-card text-center sm:col-span-2 md:col-span-1">
+                <div class="stat-card text-center">
                     <p class="text-4xl sm:text-5xl font-bold text-[#16414E]">£7.1T</p>
                     <p class="mt-2 font-semibold text-[#16414E]">Global cost of low employee engagement ($8.9T or 9% of GDP). <sup class="footnote-link">[5]</sup></p>
                 </div>
@@ -91,7 +122,7 @@
         <!-- Section 3: Key Causes of Stress -->
         <div>
             <h3 class="text-2xl font-bold text-center text-[#FEA632] mb-6">Key Causes of Stress</h3>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="custom-grid custom-grid-2-col">
                 <div class="stat-card">
                     <p class="font-semibold text-lg text-[#16414E]">Workload & Deadlines</p>
                     <ul class="list-disc list-inside mt-2 text-[#16414E] space-y-1">
