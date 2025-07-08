@@ -1,275 +1,276 @@
-<!DOCTYPE html>
-<html lang="en-GB">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Success Rate Infographic</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        #project-success-infographic-container {
-            font-family: 'Inter', sans-serif;
-        }
-        .stat-card {
-            background-color: #e3f4f4; /* Light Blue */
-            border: 1px solid #A9A9A9; /* Grey */
-            border-radius: 0.75rem;
-            padding: 1.5rem;
-        }
-        .callout-card {
-            display: flex;
-            align-items: center;
-            background-color: #fff;
-            padding: 0.75rem;
-            border-radius: 0.5rem;
-            border: 1px solid #A9A9A9;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-        .callout-marker {
-            width: 1rem;
-            height: 1rem;
-            border-radius: 50%;
-            margin-right: 0.75rem;
-            flex-shrink: 0;
-        }
-    </style>
-</head>
-<body>
+<!-- Infographic Block Starts Here -->
+<!-- Note: This snippet is designed to be pasted into a Custom HTML block in WordPress. -->
+<!-- It includes its own styles and scripts. -->
 
-    <!-- Infographic Block Starts Here -->
-    <div id="project-success-infographic-container" class="max-w-4xl mx-auto bg-[#fff5e7] rounded-xl shadow-lg p-6 sm:p-10 border border-[#A9A9A9]">
-        
-        <div class="grid grid-cols-1 gap-8">
+<!-- Load Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Load Chart.js and Datalabels Plugin -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+<!-- Load Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-            <!-- Standish Group Chart -->
-            <div class="stat-card">
-                <div class="text-center mb-4">
-                    <h4 class="text-xl font-bold text-[#008080]">Standish CHAOS Report Trends</h4>
-                    <p class="text-sm text-[#16414E]">Despite a 580% rise in PMI membership, project success rates have not improved.</p>
-                </div>
-                <div class="h-96">
-                    <canvas id="standishChart"></canvas>
-                </div>
-                <p class="text-xs text-center text-[#A9A9A9] mt-4">Source: Standish Group — CHAOS Reports 2003-2021</p>
+<style>
+    /* Scoped styles for the infographic container to avoid conflicts */
+    #project-success-infographic-container {
+        font-family: 'Inter', sans-serif;
+    }
+    #project-success-infographic-container .stat-card {
+        background-color: #e3f4f4; /* Light Blue */
+        border: 1px solid #A9A9A9; /* Grey */
+        border-radius: 0.75rem;
+        padding: 1.5rem;
+    }
+    #project-success-infographic-container .callout-card {
+        display: flex;
+        align-items: center;
+        background-color: #fff;
+        padding: 0.75rem;
+        border-radius: 0.5rem;
+        border: 1px solid #A9A9A9;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    #project-success-infographic-container .callout-marker {
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        margin-right: 0.75rem;
+        flex-shrink: 0;
+    }
+</style>
+
+<div id="project-success-infographic-container" class="max-w-4xl mx-auto bg-[#fff5e7] rounded-xl shadow-lg p-6 sm:p-10 border border-[#A9A9A9]">
+    
+    <div class="grid grid-cols-1 gap-8">
+
+        <!-- Standish Group Chart -->
+        <div class="stat-card">
+            <div class="text-center mb-4">
+                <h4 class="text-xl font-bold text-[#008080]">Standish CHAOS Report Trends</h4>
+                <p class="text-sm text-[#16414E]">Despite a 580% rise in PMI membership, project success rates have not improved.</p>
             </div>
-
-            <!-- Oxford University Stats -->
-            <div class="stat-card">
-                <div class="text-center mb-4">
-                    <h4 class="text-xl font-bold text-[#008080]">Oxford University Study</h4>
-                    <p class="text-sm text-[#16414E]">A breakdown of success from over 16,000 projects.</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
-                    <div class="h-64 md:h-80 relative">
-                        <canvas id="oxfordChart"></canvas>
-                    </div>
-                    <div class="space-y-3">
-                        <div class="callout-card">
-                            <div class="callout-marker" style="background-color: #008080;"></div>
-                            <div>
-                                <p class="font-bold text-[#16414E]">0.5%</p>
-                                <p class="text-xs text-[#16414E]">Delivering Benefits, On Time & to Budget</p>
-                            </div>
-                        </div>
-                        <div class="callout-card">
-                            <div class="callout-marker" style="background-color: #FEA632;"></div>
-                            <div>
-                                <p class="font-bold text-[#16414E]">7.5%</p>
-                                <p class="text-xs text-[#16414E]">On Time & Budget</p>
-                            </div>
-                        </div>
-                        <div class="callout-card">
-                            <div class="callout-marker" style="background-color: #16414E;"></div>
-                            <div>
-                                <p class="font-bold text-[#16414E]">40%</p>
-                                <p class="text-xs text-[#16414E]">On Budget Only</p>
-                            </div>
-                        </div>
-                        <div class="callout-card">
-                            <div class="callout-marker" style="background-color: #A9A9A9;"></div>
-                            <div>
-                                <p class="font-bold text-[#16414E]">52%</p>
-                                <p class="text-xs text-[#16414E]">Over Budget</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <p class="text-xs text-center text-[#A9A9A9] mt-4">Source: Bent Flyvbjerg, Oxford University, Saïd Business School</p>
+            <div class="h-96">
+                <canvas id="standishChart"></canvas>
             </div>
-
+            <p class="text-xs text-center text-[#A9A9A9] mt-4">Source: Standish Group — CHAOS Reports 2003-2021</p>
         </div>
+
+        <!-- Oxford University Stats -->
+        <div class="stat-card">
+            <div class="text-center mb-4">
+                <h4 class="text-xl font-bold text-[#008080]">Oxford University Study</h4>
+                <p class="text-sm text-[#16414E]">A breakdown of success from over 16,000 projects.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+                <div class="h-64 md:h-80 relative">
+                    <canvas id="oxfordChart"></canvas>
+                </div>
+                <div class="space-y-3">
+                    <div class="callout-card">
+                        <div class="callout-marker" style="background-color: #008080;"></div>
+                        <div>
+                            <p class="font-bold text-[#16414E]">0.5%</p>
+                            <p class="text-xs text-[#16414E]">Delivering Benefits, On Time & to Budget</p>
+                        </div>
+                    </div>
+                    <div class="callout-card">
+                        <div class="callout-marker" style="background-color: #FEA632;"></div>
+                        <div>
+                            <p class="font-bold text-[#16414E]">7.5%</p>
+                            <p class="text-xs text-[#16414E]">On Time & Budget</p>
+                        </div>
+                    </div>
+                    <div class="callout-card">
+                        <div class="callout-marker" style="background-color: #16414E;"></div>
+                        <div>
+                            <p class="font-bold text-[#16414E]">40%</p>
+                            <p class="text-xs text-[#16414E]">On Budget Only</p>
+                        </div>
+                    </div>
+                    <div class="callout-card">
+                        <div class="callout-marker" style="background-color: #A9A9A9;"></div>
+                        <div>
+                            <p class="font-bold text-[#16414E]">52%</p>
+                            <p class="text-xs text-[#16414E]">Over Budget</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="text-xs text-center text-[#A9A9A9] mt-4">Source: Bent Flyvbjerg, Oxford University, Saïd Business School</p>
+        </div>
+
     </div>
-    <!-- Infographic Block Ends Here -->
+</div>
 
 <script>
-    // Standish Chart
-    const standishCtx = document.getElementById('standishChart');
-    if (standishCtx) {
-        new Chart(standishCtx, {
-            type: 'line',
-            data: {
-                labels: ['2003', '2009', '2015', '2021'],
-                datasets: [
-                    {
-                        label: 'Success %',
-                        data: [34, 32, 29, 31],
-                        borderColor: '#008080', // Teal
-                        backgroundColor: 'rgba(0, 128, 128, 0.1)',
-                        fill: true,
-                        tension: 0.1,
-                        yAxisID: 'y'
-                    },
-                    {
-                        label: 'Challenged %',
-                        data: [51, 44, 52, 50],
-                        borderColor: '#FEA632', // Yellow
-                        backgroundColor: 'rgba(254, 166, 50, 0.1)',
-                        fill: true,
-                        tension: 0.1,
-                        yAxisID: 'y'
-                    },
-                    {
-                        label: 'Failure %',
-                        data: [15, 24, 19, 19],
-                        borderColor: '#A9A9A9', // Grey
-                        backgroundColor: 'rgba(169, 169, 169, 0.1)',
-                        fill: true,
-                        tension: 0.1,
-                        yAxisID: 'y'
-                    },
-                    {
-                        label: 'PMI Membership',
-                        data: [100000, null, null, 680000],
-                        borderColor: '#8B0000', // Dark Red
-                        backgroundColor: 'rgba(139, 0, 0, 0.1)',
-                        fill: false,
-                        tension: 0.1,
-                        yAxisID: 'y1',
-                        spanGaps: true
-                    }
-                ]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                scales: {
-                    y: {
-                        type: 'linear',
-                        display: true,
-                        position: 'left',
-                        beginAtZero: true,
-                        title: {
-                            display: true,
-                            text: 'Project Outcome (%)'
+    // Ensure the script runs after the DOM is ready, especially in a WordPress environment.
+    document.addEventListener('DOMContentLoaded', function() {
+        // Standish Chart
+        const standishCtx = document.getElementById('standishChart');
+        if (standishCtx) {
+            new Chart(standishCtx, {
+                type: 'line',
+                data: {
+                    labels: ['2003', '2009', '2015', '2021'],
+                    datasets: [
+                        {
+                            label: 'Success %',
+                            data: [34, 32, 29, 31],
+                            borderColor: '#008080', // Teal
+                            backgroundColor: 'rgba(0, 128, 128, 0.1)',
+                            fill: true,
+                            tension: 0.1,
+                            yAxisID: 'y'
                         },
-                        ticks: {
-                            callback: function(value) {
-                                return value + '%'
-                            }
+                        {
+                            label: 'Challenged %',
+                            data: [51, 44, 52, 50],
+                            borderColor: '#FEA632', // Yellow
+                            backgroundColor: 'rgba(254, 166, 50, 0.1)',
+                            fill: true,
+                            tension: 0.1,
+                            yAxisID: 'y'
+                        },
+                        {
+                            label: 'Failure %',
+                            data: [15, 24, 19, 19],
+                            borderColor: '#A9A9A9', // Grey
+                            backgroundColor: 'rgba(169, 169, 169, 0.1)',
+                            fill: true,
+                            tension: 0.1,
+                            yAxisID: 'y'
+                        },
+                        {
+                            label: 'PMI Membership',
+                            data: [100000, null, null, 680000],
+                            borderColor: '#8B0000', // Dark Red
+                            backgroundColor: 'rgba(139, 0, 0, 0.1)',
+                            fill: false,
+                            tension: 0.1,
+                            yAxisID: 'y1',
+                            spanGaps: true
                         }
-                    },
-                    y1: {
-                        type: 'linear',
-                        display: true,
-                        position: 'right',
-                        title: {
-                            display: true,
-                            text: 'PMI Members'
-                        },
-                        grid: {
-                            drawOnChartArea: false, 
-                        },
-                        ticks: {
-                           callback: function(value) {
-                                if (value >= 1000) {
-                                    return (value / 1000) + 'k';
-                                }
-                                return value;
-                           }
-                        }
-                    }
+                    ]
                 },
-                plugins: {
-                    legend: {
-                        position: 'bottom',
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            type: 'linear',
+                            display: true,
+                            position: 'left',
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Project Outcome (%)'
+                            },
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%'
+                                }
+                            }
+                        },
+                        y1: {
+                            type: 'linear',
+                            display: true,
+                            position: 'right',
+                            title: {
+                                display: true,
+                                text: 'PMI Members'
+                            },
+                            grid: {
+                                drawOnChartArea: false, 
+                            },
+                            ticks: {
+                               callback: function(value) {
+                                    if (value >= 1000) {
+                                        return (value / 1000) + 'k';
+                                    }
+                                    return value;
+                               }
+                            }
+                        }
                     },
-                    tooltip: {
-                        callbacks: {
-                            label: function(context) {
-                                let label = context.dataset.label || '';
-                                if (label) {
-                                    label += ': ';
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.dataset.yAxisID === 'y1') {
+                                        label += new Intl.NumberFormat('en-GB').format(context.parsed.y);
+                                    } else {
+                                        label += context.parsed.y + '%';
+                                    }
+                                    return label;
                                 }
-                                if (context.dataset.yAxisID === 'y1') {
-                                    label += new Intl.NumberFormat('en-GB').format(context.parsed.y);
-                                } else {
-                                    label += context.parsed.y + '%';
-                                }
-                                return label;
                             }
                         }
                     }
                 }
-            }
-        });
-    }
+            });
+        }
 
-    // Oxford Chart
-    const oxfordCtx = document.getElementById('oxfordChart');
-    if (oxfordCtx) {
-        const longLabels = ['Delivering Benefits, On Time & to Budget', 'On Budget & On Time (No Full Benefits)', 'On Budget (Not On Time)', 'Not On Budget'];
+        // Oxford Chart
+        const oxfordCtx = document.getElementById('oxfordChart');
+        if (oxfordCtx) {
+            // Register the datalabels plugin only for this chart if needed, but we are using callouts
+            // Chart.register(ChartDataLabels); 
+            const longLabels = ['Delivering Benefits, On Time & to Budget', 'On Budget & On Time (No Full Benefits)', 'On Budget (Not On Time)', 'Not On Budget'];
 
-        new Chart(oxfordCtx, {
-            type: 'doughnut',
-            data: {
-                labels: longLabels,
-                datasets: [{
-                    data: [0.5, 7.5, 40, 52],
-                    backgroundColor: [
-                        '#008080', // Teal
-                        '#FEA632', // Yellow
-                        '#16414E', // Blue
-                        '#A9A9A9', // Grey
-                    ],
-                    borderColor: '#e3f4f4', // Light Blue background of the card
-                    borderWidth: 4,
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                cutout: '50%',
-                plugins: {
-                    legend: {
-                        display: false,
-                    },
-                    title: {
-                        display: false,
-                    },
-                    tooltip: {
-                         callbacks: {
-                            label: function(context) {
-                                let label = context.label || '';
-                                if (label) {
-                                    label += ': ';
+            new Chart(oxfordCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: longLabels,
+                    datasets: [{
+                        data: [0.5, 7.5, 40, 52],
+                        backgroundColor: [
+                            '#008080', // Teal
+                            '#FEA632', // Yellow
+                            '#16414E', // Blue
+                            '#A9A9A9', // Grey
+                        ],
+                        borderColor: '#e3f4f4', // Light Blue background of the card
+                        borderWidth: 4,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '50%',
+                    plugins: {
+                        legend: {
+                            display: false,
+                        },
+                        title: {
+                            display: false,
+                        },
+                        tooltip: {
+                             callbacks: {
+                                label: function(context) {
+                                    let label = context.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    label += context.parsed + '%';
+                                    return label;
                                 }
-                                label += context.parsed + '%';
-                                return label;
                             }
+                        },
+                        datalabels: {
+                           display: false // We are using a custom HTML legend instead
                         }
-                    },
-                    datalabels: {
-                       display: false // We are using a custom HTML legend instead
                     }
                 }
-            }
-        });
-    }
+            });
+        }
+    });
 </script>
-
-</body>
-</html>
