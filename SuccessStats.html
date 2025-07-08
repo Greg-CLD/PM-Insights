@@ -63,40 +63,18 @@
                 <h4 class="text-xl font-bold text-[#008080]">Oxford University Study</h4>
                 <p class="text-sm text-[#16414E]">A breakdown of success from over 16,000 projects.</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
-                <div class="h-64 md:h-80 relative">
-                    <canvas id="oxfordChart"></canvas>
-                </div>
-                <div class="space-y-3">
-                    <div class="callout-card">
-                        <div class="callout-marker" style="background-color: #008080;"></div>
-                        <div>
-                            <p class="font-bold text-[#16414E]">0.5%</p>
-                            <p class="text-xs text-[#16414E]">Delivering Benefits, On Time & to Budget</p>
-                        </div>
-                    </div>
-                    <div class="callout-card">
-                        <div class="callout-marker" style="background-color: #FEA632;"></div>
-                        <div>
-                            <p class="font-bold text-[#16414E]">7.5%</p>
-                            <p class="text-xs text-[#16414E]">On Time & Budget</p>
-                        </div>
-                    </div>
-                    <div class="callout-card">
-                        <div class="callout-marker" style="background-color: #16414E;"></div>
-                        <div>
-                            <p class="font-bold text-[#16414E]">40%</p>
-                            <p class="text-xs text-[#16414E]">On Budget Only</p>
-                        </div>
-                    </div>
-                    <div class="callout-card">
-                        <div class="callout-marker" style="background-color: #A9A9A9;"></div>
-                        <div>
-                            <p class="font-bold text-[#16414E]">52%</p>
-                            <p class="text-xs text-[#16414E]">Over Budget</p>
-                        </div>
+            <div class="h-80 relative">
+                <canvas id="oxfordChart"></canvas>
+            </div>
+            <div class="mt-6 text-left sm:text-center text-sm text-[#16414E] space-y-2">
+                <p><span class="font-bold" style="color: #16414E;">47.9%</span> of projects are on budget.</p>
+                <div class="pl-6 border-l-2" style="border-color: #16414E;">
+                    <p>Within that, <span class="font-bold" style="color: #FEA632;">8.5%</span> are also on time.</p>
+                    <div class="pl-6 border-l-2" style="border-color: #FEA632;">
+                        <p>And of those, only <span class="font-bold" style="color: #008080;">0.5%</span> deliver full benefits.</p>
                     </div>
                 </div>
+                <p class="pt-2"><span class="font-bold" style="color: #A9A9A9;">52.1%</span> of projects are over budget.</p>
             </div>
             <p class="text-xs text-center text-[#A9A9A9] mt-4">Source: Bent Flyvbjerg, Oxford University, Saïd Business School</p>
         </div>
@@ -222,22 +200,25 @@
         // Oxford Chart
         const oxfordCtx = document.getElementById('oxfordChart');
         if (oxfordCtx) {
-            // Register the datalabels plugin only for this chart if needed, but we are using callouts
-            // Chart.register(ChartDataLabels); 
-            const longLabels = ['Delivering Benefits, On Time & to Budget', 'On Budget & On Time (No Full Benefits)', 'On Budget (Not On Time)', 'Not On Budget'];
+            const chartData = {
+                // Slices for the chart: Over Budget, On Budget but not On Time, On Time & Budget but no benefits, Full Success
+                values: [52.1, 39.4, 8.0, 0.5],
+                labels: ['Over Budget', 'On Budget Only', 'On Time & Budget', 'Delivering Benefits, On Time & to Budget'],
+                colors: [
+                    '#A9A9A9', // Grey
+                    '#16414E', // Blue
+                    '#FEA632', // Yellow
+                    '#008080', // Teal
+                ]
+            };
 
             new Chart(oxfordCtx, {
                 type: 'doughnut',
                 data: {
-                    labels: longLabels,
+                    labels: chartData.labels,
                     datasets: [{
-                        data: [0.5, 7.5, 40, 52],
-                        backgroundColor: [
-                            '#008080', // Teal
-                            '#FEA632', // Yellow
-                            '#16414E', // Blue
-                            '#A9A9A9', // Grey
-                        ],
+                        data: chartData.values,
+                        backgroundColor: chartData.colors,
                         borderColor: '#e3f4f4', // Light Blue background of the card
                         borderWidth: 4,
                     }]
@@ -266,7 +247,7 @@
                             }
                         },
                         datalabels: {
-                           display: false // We are using a custom HTML legend instead
+                           display: false
                         }
                     }
                 }
