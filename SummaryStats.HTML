@@ -39,6 +39,7 @@
         .cube-container {
             perspective: 1000px; /* This creates the 3D space */
             min-height: 250px;
+            position: relative;
         }
 
         .cube {
@@ -71,14 +72,10 @@
         }
 
         .cube-face--front {
-            background-color: #fffbeb; /* A warm, light yellow */
-            color: #16414E;
             transform: translateZ(0); /* Explicitly set front face */
         }
 
         .cube-face--back {
-            background-color: #fce7f3; /* A soft pink for contrast */
-            color: #16414E;
             transform: rotateY(180deg);
         }
         
@@ -93,9 +90,10 @@
             color: #6b7280;
             opacity: 0.8;
             transition: opacity 0.3s;
+            pointer-events: none; /* Prevents the text from interfering with the click */
         }
         
-        .cube:hover .click-indicator {
+        .cube-container:hover .click-indicator {
             opacity: 1;
         }
 
@@ -111,16 +109,16 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
             <!-- Stat 1: Interactive Cube (Wellbeing Stats) -->
-            <div class="cube-container">
-                <div class="cube" id="interactive-cube" onclick="rotateCube()">
+            <div class="cube-container" onclick="rotateCube('interactive-cube-1')">
+                <div class="cube" id="interactive-cube-1">
                     <!-- Front Face -->
-                    <div class="cube-face cube-face--front">
-                        <p class="text-6xl lg:text-7xl font-bold text-[#16414E]">50%</p>
+                    <div class="cube-face cube-face--front" style="background-color: #fffbeb; color: #16414E;">
+                        <p class="text-6xl lg:text-7xl font-bold">50%</p>
                         <p class="mt-2 text-lg font-semibold">of project managers experience burnout—the highest rate of any profession surveyed.</p>
                     </div>
                     <!-- Back Face -->
-                    <div class="cube-face cube-face--back">
-                        <p class="text-6xl lg:text-7xl font-bold text-[#16414E]">72%</p>
+                    <div class="cube-face cube-face--back" style="background-color: #fce7f3; color: #16414E;">
+                        <p class="text-6xl lg:text-7xl font-bold">72%</p>
                         <p class="mt-2 text-lg font-semibold">say their work on a project has negatively impacted their mental wellbeing.</p>
                     </div>
                 </div>
@@ -130,10 +128,24 @@
                 </div>
             </div>
 
-            <!-- Stat 2: Project Failure Rate (Oxford Study) -->
-            <div class="stat-card">
-                <p class="text-6xl lg:text-7xl font-bold text-[#008080]">0.5%</p>
-                <p class="mt-2 text-lg font-semibold">The tiny fraction of projects that are actually successful: delivering full benefits, on time, and on budget.</p>
+            <!-- Stat 2: Interactive Cube (Project Success Rate) -->
+            <div class="cube-container" onclick="rotateCube('interactive-cube-2')">
+                <div class="cube" id="interactive-cube-2">
+                    <!-- Front Face -->
+                    <div class="cube-face cube-face--front" style="background-color: #f0f9ff; color: #008080;">
+                        <p class="text-6xl lg:text-7xl font-bold">0.5%</p>
+                        <p class="mt-2 text-lg font-semibold">The tiny fraction of projects that are actually successful: delivering full benefits, on time, and on budget.</p>
+                    </div>
+                    <!-- Back Face -->
+                    <div class="cube-face cube-face--back" style="background-color: #e0f2f1; color: #008080;">
+                        <p class="text-6xl lg:text-7xl font-bold">8.5%</p>
+                        <p class="mt-2 text-lg font-semibold">of projects are on time and on budget, but still fail to deliver the expected value.</p>
+                    </div>
+                </div>
+                 <div class="click-indicator">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 8.812A9.025 9.025 0 019 8.25a9.025 9.025 0 014.188.562" /></svg>
+                    Click to flip
+                </div>
             </div>
 
             <!-- Stat 3: Stagnation vs. Growth (Standish/PMI) -->
@@ -148,10 +160,12 @@
     <!-- Infographic Block Ends Here -->
 
     <script>
-        // Simple JavaScript to toggle the 'is-flipped' class on the cube
-        function rotateCube() {
-            const cube = document.getElementById('interactive-cube');
-            cube.classList.toggle('is-flipped');
+        // Toggles the 'is-flipped' class on the specified cube
+        function rotateCube(cubeId) {
+            const cube = document.getElementById(cubeId);
+            if (cube) {
+                cube.classList.toggle('is-flipped');
+            }
         }
     </script>
 
